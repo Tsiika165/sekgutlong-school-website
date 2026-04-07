@@ -1,16 +1,58 @@
-# React + Vite
+# 🎓 Sekgutlong School Website & Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern full-stack school website and management platform designed to support public users, staff, and administrators.
 
-Currently, two official plugins are available:
+The system enables efficient management of announcements, staff profiles, gallery content, admissions, and user interactions through a clean and responsive interface.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🌐 Public Website
 
-## Expanding the ESLint configuration
+- View announcements and updates
+- Browse media gallery (images & videos)
+- Explore staff profiles
+- Access admissions information
+- Contact the school
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🔐 Admin Dashboard
+
+- Secure authentication system
+- Full CRUD for announcements
+- Full CRUD for gallery (images & videos)
+- Staff management system
+- Review and approve staff submissions
+- Manage contact messages
+- Control admissions status
+- Dashboard statistics and insights
+
+### 👩‍🏫 Staff System
+
+- Staff profile submission workflow
+- Admin approval system (pending / approved / rejected)
+- Profile image upload with preview
+- Status tracking system
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+- React (Vite)
+- Tailwind CSS
+- Lucide React Icons
+
+### Backend / Services
+
+- Supabase (Database, Auth, Storage)
+
+### Other Tools
+
+- React Hot Toast (notifications)
+- Git & GitHub (version control)
+
+---
+
+## 📂 Project Structure
