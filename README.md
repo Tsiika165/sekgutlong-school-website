@@ -55,4 +55,22 @@ The system enables efficient management of announcements, staff profiles, galler
 
 ---
 
-## 📂 Project Structure
+## 📸 Screenshots
+
+### 🏠 Home Page
+![Home Page](./screenshots/home.png)
+
+### 📢 Announcements
+![Announcements](./screenshots/announcements.png)
+
+### 🖼️ Gallery
+![Gallery](./screenshots/gallery.png)
+
+### 👩‍🏫 Staff Page
+![Staff](./screenshots/staff.png)
+
+### 🧑‍💼 Admin Dashboard
+![Admin Dashboard](./screenshots/admin-dashboard.png)
+
+### 📝 Staff Profile Submission
+![Staff Apply](./screenshots/staff-apply.png)
