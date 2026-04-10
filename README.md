@@ -1,76 +1,122 @@
 # 🎓 Sekgutlong School Website & Management System
 
-A modern full-stack school website and management platform designed to support public users, staff, and administrators.
+<p align="center">
+  A modern full-stack platform designed to support real school operations, staff workflows, and public engagement.
+</p>
 
-The system enables efficient management of announcements, staff profiles, gallery content, admissions, and user interactions through a clean and responsive interface.
+<p align="center">
+  <img src="https://img.shields.io/badge/Frontend-React-blue?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Backend-Supabase-green?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Styling-TailwindCSS-38B2AC?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge">
+</p>
 
 ---
 
-## 🚀 Features
+## 🚀 Overview
 
-### 🌐 Public Website
+The **Sekgutlong School Website & Management System** is a full-stack web application designed to streamline school operations while providing a clean and interactive public-facing platform.
 
-- View announcements and updates
-- Browse media gallery (images & videos)
-- Explore staff profiles
-- Access admissions information
-- Contact the school
+It bridges the gap between **administration, staff, and the public**, enabling efficient communication, content management, and workflow automation.
+
+---
+
+## 🌍 Real-World Impact
+
+This system was designed with the goal of being **deployed and used by Sekgutlong School** to improve administrative efficiency and communication.
+
+It addresses real challenges such as:
+
+- Managing announcements in one place  
+- Streamlining staff profile submissions and approvals  
+- Providing a centralized platform for students, parents, and staff  
+
+This project demonstrates how software can be used to **solve practical problems in educational environments**.
+
+---
+
+## ✨ Key Features
+
+### 🌐 Public Platform
+- 📢 View announcements and updates  
+- 🖼️ Browse media gallery (images & videos)  
+- 👩‍🏫 Explore staff profiles  
+- 📝 Access admissions information  
+- 📩 Contact the school  
 
 ### 🔐 Admin Dashboard
+- 🔑 Secure authentication system  
+- 🛠️ Full CRUD for announcements  
+- 🖼️ Manage gallery content  
+- 👥 Staff management system  
+- ✅ Approve/reject staff submissions  
+- 📬 Manage incoming messages  
+- 📊 Dashboard analytics & insights  
 
-- Secure authentication system
-- Full CRUD for announcements
-- Full CRUD for gallery (images & videos)
-- Staff management system
-- Review and approve staff submissions
-- Manage contact messages
-- Control admissions status
-- Dashboard statistics and insights
-
-### 👩‍🏫 Staff System
-
-- Staff profile submission workflow
-- Admin approval system (pending / approved / rejected)
-- Profile image upload with preview
-- Status tracking system
+### 👩‍🏫 Staff Workflow System
+- 📝 Profile submission system  
+- ⏳ Approval lifecycle (Pending → Approved → Rejected)  
+- 🖼️ Image upload with preview  
+- 📍 Status tracking  
 
 ---
 
 ## 🛠️ Tech Stack
 
-### Frontend
-
-- React (Vite)
-- Tailwind CSS
-- Lucide React Icons
-
-### Backend / Services
-
-- Supabase (Database, Auth, Storage)
-
-### Other Tools
-
-- React Hot Toast (notifications)
-- Git & GitHub (version control)
+| Layer        | Technology |
+|-------------|----------|
+| Frontend     | React (Vite), Tailwind CSS |
+| Backend      | Supabase (Auth, Database, Storage) |
+| UI/UX        | Lucide Icons, React Hot Toast |
+| Versioning   | Git & GitHub |
 
 ---
 
 ## 📸 Screenshots
 
 ### 🏠 Home Page
-![Home Page](./screenshots/home.png)
+<p align="center">
+  <img src="./screenshots/home.png" width="900"/>
+</p>
 
 ### 📢 Announcements
-![Announcements](./screenshots/announcements.png)
+<p align="center">
+  <img src="./screenshots/announcements.png" width="900"/>
+</p>
 
 ### 🖼️ Gallery
-![Gallery](./screenshots/gallery.png)
+<p align="center">
+  <img src="./screenshots/gallery.png" width="900"/>
+</p>
 
 ### 👩‍🏫 Staff Page
-![Staff](./screenshots/staff.png)
+<p align="center">
+  <img src="./screenshots/staff.png" width="900"/>
+</p>
 
 ### 🧑‍💼 Admin Dashboard
-![Admin Dashboard](./screenshots/admin-dashboard.png)
+<p align="center">
+  <img src="./screenshots/admin-dashboard.png" width="900"/>
+</p>
 
 ### 📝 Staff Profile Submission
-![Staff Apply](./screenshots/staff-apply.png)
+<p align="center">
+  <img src="./screenshots/staff-apply.png" width="900"/>
+</p>
+
+---
+
+## ⚙️ Installation & Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/Tsiika165/sekgutlong-school-website.git
+
+# Navigate into the project
+cd sekgutlong-school-website
+
+# Install dependencies
+npm install
+
+# Run the development server
+npm run dev
