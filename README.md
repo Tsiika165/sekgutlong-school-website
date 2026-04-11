@@ -50,24 +50,25 @@ This project demonstrates how software can be used to **solve practical problems
 - 🖼️ Manage gallery content  
 - 👥 Staff management system  
 - ✅ Approve/reject staff submissions  
-- 📬 Manage incoming messages  
-- 📊 Dashboard analytics & insights  
+- 📬 Manage contact messages  
+- 📊 Dashboard statistics and insights  
 
-### 👩‍🏫 Staff Workflow System
-- 📝 Profile submission system  
-- ⏳ Approval lifecycle (Pending → Approved → Rejected)  
-- 🖼️ Image upload with preview  
-- 📍 Status tracking  
+### 👩‍🏫 Staff System
+- 📝 Staff profile submission workflow  
+- ⏳ Admin approval system (pending / approved / rejected)  
+- 🖼️ Profile image upload with preview  
+- 📍 Status tracking system  
 
 ---
 
 ## 🛠️ Tech Stack
 
 | Layer        | Technology |
-|-------------|----------|
+|-------------|------------|
 | Frontend     | React (Vite), Tailwind CSS |
-| Backend      | Supabase (Auth, Database, Storage) |
-| UI/UX        | Lucide Icons, React Hot Toast |
+| Backend      | Supabase (Database, Auth, Storage) |
+| UI/UX        | Lucide React Icons |
+| Tools        | React Hot Toast |
 | Versioning   | Git & GitHub |
 
 ---
@@ -108,15 +109,55 @@ This project demonstrates how software can be used to **solve practical problems
 
 ## ⚙️ Installation & Setup
 
-```bash
-# Clone the repository
-git clone https://github.com/Tsiika165/sekgutlong-school-website.git
+git clone https://github.com/Tsiika165/sekgutlong-school-website.git  
+cd sekgutlong-school-website  
+npm install  
+npm run dev  
 
-# Navigate into the project
-cd sekgutlong-school-website
+---
 
-# Install dependencies
-npm install
+## 🌐 Future Improvements
 
-# Run the development server
-npm run dev
+- 🏫 Integrate Sekgutlong School branding and visuals for improved user experience  
+- 🎨 Enhance UI/UX by incorporating real images of Sekgutlong School  
+- 🖼️ Add a dynamic background featuring Sekgutlong School  
+- 📱 Mobile application version for broader accessibility  
+- 🔔 Real-time notifications for announcements and updates  
+- 📈 Advanced analytics dashboard for admin insights  
+- 🧠 AI-powered search and recommendations  
+- 🌍 Multi-language support for inclusivity  
+
+---
+
+## 🤝 Contribution
+
+Contributions are welcome!
+
+1. Fork the repository  
+2. Create your feature branch  
+3. Commit your changes  
+4. Open a pull request  
+
+---
+
+## 📄 License
+
+This project is open-source and available under the MIT License.
+
+---
+
+## 👨‍💻 Author
+
+**Tsietsi Mofokeng**
+
+- 💼 Aspiring Software Engineer & Systems Developer  
+- 🎓 BSc Computer Science  
+- 🌍 Passionate about building real-world digital solutions  
+
+> This project is part of my portfolio showcasing full-stack development, system design, and real-world problem solving.
+
+---
+
+<p align="center">
+  ⭐ If you like this project, consider giving it a star!
+</p>
