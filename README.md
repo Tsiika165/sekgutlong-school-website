@@ -116,6 +116,26 @@ npm run dev
 
 ---
 
+## 🧪 Testing & CI
+
+Unit tests use [Vitest](https://vitest.dev) and React Testing Library, with the Supabase client mocked.
+
+```bash
+npm test          # watch mode
+npm run test:run  # single run (used in CI)
+```
+
+Covered so far: login (email and phone lookup, error paths), staff sign-up (access code gate, `pending_staff` role), role-based page access in `App`, navigation, and shared UI components. GitHub Actions runs lint, tests and a production build on every push.
+
+* * *
+
+## 🚀 Deployment
+
+- **Vercel:** https://sekgutlong.vercel.app
+- **GitHub Pages:** built and deployed by `.github/workflows/deploy-pages.yml`. Set `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY` and `VITE_STAFF_ACCESS_CODE` as repository secrets and set Pages source to "GitHub Actions". See `.env.example` for local setup.
+
+* * *
+
 ## 🌐 Future Improvements
 
 - 🏫 Integrate Sekgutlong School branding and visuals for improved user experience  
