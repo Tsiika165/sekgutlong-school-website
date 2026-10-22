@@ -10,17 +10,19 @@ const mocks = vi.hoisted(() => {
   const select = vi.fn(() => ({ eq }));
   const from = vi.fn(() => ({ select }));
   const signInWithPassword = vi.fn();
+  const rpc = vi.fn();
   const toast = Object.assign(vi.fn(), {
     loading: vi.fn(() => "toast-id"),
     success: vi.fn(),
     error: vi.fn(),
   });
-  return { single, eq, select, from, signInWithPassword, toast };
+  return { single, eq, select, from, signInWithPassword, rpc, toast };
 });
 
 vi.mock("../lib/supabase", () => ({
   supabase: {
     from: mocks.from,
+    rpc: mocks.rpc,
     auth: { signInWithPassword: mocks.signInWithPassword },
   },
 }));
@@ -64,6 +66,7 @@ describe("LoginModal", () => {
       password: "secret123",
     });
     // Only the profile lookup by id happens; no phone lookup
+    expect(mocks.rpc).not.toHaveBeenCalled();
     expect(mocks.from).toHaveBeenCalledTimes(1);
     expect(mocks.eq).toHaveBeenCalledWith("id", "user-1");
     expect(onLoginSuccess).toHaveBeenCalledWith(adminProfile);
@@ -80,14 +83,14 @@ describe("LoginModal", () => {
   });
 
   it("looks up the email by phone number when no @ is present", async () => {
-    mocks.single
-      .mockResolvedValueOnce({ data: { email: "staff@school.co.za" }, error: null })
-      .mockResolvedValueOnce({ data: adminProfile, error: null });
+    mocks.rpc.mockResolvedValueOnce({ data: "staff@school.co.za", error: null });
 
     const { user, onLoginSuccess } = setup();
     await fillAndSubmit(user, "0761234567");
 
-    expect(mocks.eq).toHaveBeenCalledWith("phone", "0761234567");
+    expect(mocks.rpc).toHaveBeenCalledWith("email_for_phone", {
+      p_phone: "0761234567",
+    });
     expect(mocks.signInWithPassword).toHaveBeenCalledWith({
       email: "staff@school.co.za",
       password: "secret123",
@@ -96,7 +99,7 @@ describe("LoginModal", () => {
   });
 
   it("stops with an error when the phone number is unknown", async () => {
-    mocks.single.mockResolvedValueOnce({ data: null, error: { message: "no rows" } });
+    mocks.rpc.mockResolvedValueOnce({ data: null, error: null });
 
     const { user, onLoginSuccess } = setup();
     await fillAndSubmit(user, "0000000000");

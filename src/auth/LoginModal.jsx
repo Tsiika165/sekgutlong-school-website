@@ -20,13 +20,13 @@ const LoginModal = ({ onClose, onOpenSignup, onLoginSuccess }) => {
     let emailToUse = identifier.trim();
 
     if (!isEmail(emailToUse)) {
-      const { data, error } = await supabase
-        .from("profiles")
-        .select("email")
-        .eq("phone", emailToUse)
-        .single();
+      // Profiles are private under row level security, so the phone-to-email
+      // lookup goes through a narrow database function instead of a table read.
+      const { data: foundEmail, error } = await supabase.rpc("email_for_phone", {
+        p_phone: emailToUse,
+      });
 
-      if (error || !data?.email) {
+      if (error || !foundEmail) {
         toast.error("No account found with that email or phone number.", {
           id: toastId,
         });
@@ -34,7 +34,7 @@ const LoginModal = ({ onClose, onOpenSignup, onLoginSuccess }) => {
         return;
       }
 
-      emailToUse = data.email;
+      emailToUse = foundEmail;
     }
 
     const { data: authData, error: loginError } =
