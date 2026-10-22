@@ -8,6 +8,7 @@
   <img src="https://img.shields.io/badge/Frontend-React-blue?style=for-the-badge">
   <img src="https://img.shields.io/badge/Backend-Supabase-green?style=for-the-badge">
   <img src="https://img.shields.io/badge/Styling-TailwindCSS-38B2AC?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Tests-Vitest-6E9F18?style=for-the-badge">
   <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge">
 </p>
 
@@ -27,9 +28,9 @@ This system was designed with the goal of being **deployed and used by Sekgutlon
 
 It addresses real challenges such as:
 
-- Managing announcements in one place  
-- Streamlining staff profile submissions and approvals  
-- Providing a centralized platform for students, parents, and staff  
+- Managing announcements in one place
+- Streamlining staff profile submissions and approvals
+- Providing a centralized platform for students, parents, and staff
 
 This project demonstrates how software can be used to **solve practical problems in educational environments**.
 
@@ -38,69 +39,80 @@ This project demonstrates how software can be used to **solve practical problems
 ## ✨ Key Features
 
 ### 🌐 Public Platform
-- 📢 View announcements and updates  
-- 🖼️ Browse media gallery (images & videos)  
-- 👩‍🏫 Explore staff profiles  
-- 📝 Access admissions information  
-- 📩 Contact the school  
+
+- 📢 View announcements and updates
+- 🖼️ Browse media gallery (images & videos)
+- 👩‍🏫 Explore staff profiles
+- 📝 Access admissions information
+- 📩 Contact the school
 
 ### 🔐 Admin Dashboard
-- 🔑 Secure authentication system  
-- 🛠️ Full CRUD for announcements  
-- 🖼️ Manage gallery content  
-- 👥 Staff management system  
-- ✅ Approve/reject staff submissions  
-- 📬 Manage contact messages  
-- 📊 Dashboard statistics and insights  
+
+- 🔑 Authentication with role-based access (admin, staff, pending staff)
+- 🛠️ Full CRUD for announcements
+- 🖼️ Manage gallery content
+- 👥 Staff management system
+- ✅ Approve/reject staff submissions
+- 📬 Manage contact messages
+- 📊 Dashboard statistics and insights
 
 ### 👩‍🏫 Staff System
-- 📝 Staff profile submission workflow  
-- ⏳ Admin approval system (pending / approved / rejected)  
-- 🖼️ Profile image upload with preview  
-- 📍 Status tracking system  
+
+- 📝 Staff profile submission workflow
+- ⏳ Admin approval system (pending / approved / rejected)
+- 🖼️ Profile image upload with preview
+- 📍 Status tracking system
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Layer        | Technology |
-|-------------|------------|
-| Frontend     | React (Vite), Tailwind CSS |
-| Backend      | Supabase (Database, Auth, Storage) |
-| UI/UX        | Lucide React Icons |
-| Tools        | React Hot Toast |
-| Versioning   | Git & GitHub |
+| Layer      | Technology                         |
+| ---------- | ---------------------------------- |
+| Frontend   | React (Vite), Tailwind CSS         |
+| Backend    | Supabase (Database, Auth, Storage) |
+| UI/UX      | Lucide React Icons                 |
+| Tools      | React Hot Toast                    |
+| Testing    | Vitest, React Testing Library      |
+| CI         | GitHub Actions                     |
+| Versioning | Git & GitHub                       |
 
 ---
 
 ## 📸 Screenshots
 
 ### 🏠 Home Page
+
 <p align="center">
   <img src="./screenshots/home.png" width="900"/>
 </p>
 
 ### 📢 Announcements
+
 <p align="center">
   <img src="./screenshots/announcements.png" width="900"/>
 </p>
 
 ### 🖼️ Gallery
+
 <p align="center">
   <img src="./screenshots/gallery.png" width="900"/>
 </p>
 
 ### 👩‍🏫 Staff Page
+
 <p align="center">
   <img src="./screenshots/staff.png" width="900"/>
 </p>
 
 ### 🧑‍💼 Admin Dashboard
+
 <p align="center">
   <img src="./screenshots/admin-dashboard.png" width="900"/>
 </p>
 
 ### 📝 Staff Profile Submission
+
 <p align="center">
   <img src="./screenshots/staff-apply.png" width="900"/>
 </p>
@@ -109,10 +121,25 @@ This project demonstrates how software can be used to **solve practical problems
 
 ## ⚙️ Installation & Setup
 
-git clone https://github.com/Tsiika165/sekgutlong-school-website.git  
-cd sekgutlong-school-website  
-npm install  
-npm run dev  
+```bash
+git clone https://github.com/Tsiika165/sekgutlong-school-website.git
+cd sekgutlong-school-website
+npm install
+```
+
+Create a `.env` file in the project root (see `.env.example`):
+
+```
+VITE_SUPABASE_URL=your-project-url
+VITE_SUPABASE_ANON_KEY=your-supabase-anon-key
+VITE_STAFF_ACCESS_CODE=choose-a-code
+```
+
+Then start the app:
+
+```bash
+npm run dev
+```
 
 ---
 
@@ -127,25 +154,26 @@ npm run test:run  # single run (used in CI)
 
 Covered so far: login (email and phone lookup, error paths), staff sign-up (access code gate, `pending_staff` role), role-based page access in `App`, navigation, and shared UI components. GitHub Actions runs lint, tests and a production build on every push.
 
-* * *
+---
 
 ## 🚀 Deployment
 
-- **Vercel:** https://sekgutlong.vercel.app
-- **GitHub Pages:** built and deployed by `.github/workflows/deploy-pages.yml`. Set `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY` and `VITE_STAFF_ACCESS_CODE` as repository secrets and set Pages source to "GitHub Actions". See `.env.example` for local setup.
+- **Live demo (Vercel):** https://sekgutlong.vercel.app
+- **GitHub Pages (optional, currently disabled):** a deploy workflow is included in `.github/workflows/deploy-pages.yml`. To enable it, set Pages source to "GitHub Actions" and add `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY` and `VITE_STAFF_ACCESS_CODE` as repository secrets.
 
-* * *
+---
 
 ## 🌐 Future Improvements
 
-- 🏫 Integrate Sekgutlong School branding and visuals for improved user experience  
-- 🎨 Enhance UI/UX by incorporating real images of Sekgutlong School  
-- 🖼️ Add a dynamic background featuring Sekgutlong School  
-- 📱 Mobile application version for broader accessibility  
-- 🔔 Real-time notifications for announcements and updates  
-- 📈 Advanced analytics dashboard for admin insights  
-- 🧠 AI-powered search and recommendations  
-- 🌍 Multi-language support for inclusivity  
+- 🏫 Integrate Sekgutlong School branding and visuals for improved user experience
+- 🎨 Enhance UI/UX by incorporating real images of Sekgutlong School
+- 🖼️ Add a dynamic background featuring Sekgutlong School
+- 🧪 Expand test coverage to the admin pages and the staff profile form
+- 📱 Mobile application version for broader accessibility
+- 🔔 Real-time notifications for announcements and updates
+- 📈 Advanced analytics dashboard for admin insights
+- 🧠 AI-powered search and recommendations
+- 🌍 Multi-language support for inclusivity
 
 ---
 
@@ -153,10 +181,10 @@ Covered so far: login (email and phone lookup, error paths), staff sign-up (acce
 
 Contributions are welcome!
 
-1. Fork the repository  
-2. Create your feature branch  
-3. Commit your changes  
-4. Open a pull request  
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Open a pull request
 
 ---
 
@@ -170,9 +198,9 @@ This project is open-source and available under the MIT License.
 
 **Tsietsi Mofokeng**
 
-- 💼 Aspiring Software Engineer & Systems Developer  
-- 🎓 BSc Computer Science  
-- 🌍 Passionate about building real-world digital solutions  
+- 💼 Aspiring Software Engineer & Systems Developer
+- 🎓 BSc Computer Science & Information Systems
+- 🌍 Passionate about building real-world digital solutions
 
 > This project is part of my portfolio showcasing full-stack development, system design, and real-world problem solving.
 
