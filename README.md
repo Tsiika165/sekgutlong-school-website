@@ -48,7 +48,7 @@ This project demonstrates how software can be used to **solve practical problems
 
 ### 🔐 Admin Dashboard
 
-- 🔑 Authentication with role-based access (admin, staff, pending staff)
+- 🔑 Role-based access (admin, staff, pending staff) enforced with Supabase Row Level Security
 - 🛠️ Full CRUD for announcements
 - 🖼️ Manage gallery content
 - 👥 Staff management system
@@ -67,15 +67,15 @@ This project demonstrates how software can be used to **solve practical problems
 
 ## 🛠️ Tech Stack
 
-| Layer      | Technology                         |
-| ---------- | ---------------------------------- |
-| Frontend   | React (Vite), Tailwind CSS         |
-| Backend    | Supabase (Database, Auth, Storage) |
-| UI/UX      | Lucide React Icons                 |
-| Tools      | React Hot Toast                    |
-| Testing    | Vitest, React Testing Library      |
-| CI         | GitHub Actions                     |
-| Versioning | Git & GitHub                       |
+| Layer      | Technology                                             |
+| ---------- | ------------------------------------------------------ |
+| Frontend   | React (Vite), Tailwind CSS                             |
+| Backend    | Supabase (Database, Auth, Storage, Row Level Security) |
+| UI/UX      | Lucide React Icons                                     |
+| Tools      | React Hot Toast                                        |
+| Testing    | Vitest, React Testing Library                          |
+| CI         | GitHub Actions                                         |
+| Versioning | Git & GitHub                                           |
 
 ---
 
@@ -143,6 +143,27 @@ npm run dev
 
 ---
 
+## 🔐 Database Security
+
+Access control is enforced in the database with Supabase Row Level Security, not only in the UI.
+
+| Data                                         | Who can read              | Who can write                                                   |
+| -------------------------------------------- | ------------------------- | --------------------------------------------------------------- |
+| News (published), gallery, staff, admissions | Everyone                  | Admins only                                                     |
+| Contact messages                             | Admins only               | Anyone can send                                                 |
+| Staff submissions                            | Own submission, or admins | Approved staff (own row), admins                                |
+| Profiles                                     | Own profile, or admins    | New sign-ups start as `pending_staff`; only admins change roles |
+| Storage (`news-media`)                       | Everyone                  | Upload: staff and admins. Delete: admins                        |
+
+To set up your own Supabase project, run these in the SQL editor, in order:
+
+1. `supabase/security-policies.sql`
+2. `supabase/storage-policies.sql`
+
+Login by phone number uses the `email_for_phone` database function, which the first script creates.
+
+---
+
 ## 🧪 Testing & CI
 
 Unit tests use [Vitest](https://vitest.dev) and React Testing Library, with the Supabase client mocked.
@@ -168,6 +189,7 @@ Covered so far: login (email and phone lookup, error paths), staff sign-up (acce
 - 🏫 Integrate Sekgutlong School branding and visuals for improved user experience
 - 🎨 Enhance UI/UX by incorporating real images of Sekgutlong School
 - 🖼️ Add a dynamic background featuring Sekgutlong School
+- 🔒 Move staff access-code validation to the server (it currently ships in the client bundle)
 - 🧪 Expand test coverage to the admin pages and the staff profile form
 - 📱 Mobile application version for broader accessibility
 - 🔔 Real-time notifications for announcements and updates
